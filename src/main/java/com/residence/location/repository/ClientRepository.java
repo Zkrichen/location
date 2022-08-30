@@ -1,3 +1,4 @@
+
 package com.residence.location.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;

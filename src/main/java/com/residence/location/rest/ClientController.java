@@ -1,11 +1,11 @@
 package com.residence.location.rest;
 
-import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -22,16 +22,15 @@ import com.residence.location.service.ClientService;
 
 @RestController
 @RequestMapping("/clients")
-@CrossOrigin(origins = "**/**")
+@CrossOrigin(origins = "http://localhost:4200/")
 public class ClientController {
 @Autowired
 public ClientService clientService;
 
-
-	    @GetMapping("/")
-	    public Collection<Client> getClients() {
-	        return clientService.getAll().stream()
-	                .collect(Collectors.toList());
+	    @GetMapping(value="/", produces = { MediaType.APPLICATION_JSON_VALUE})
+	    public List<Client> getClients() {
+	        List<Client> clients= clientService.getAll();
+	        return clients;
 	    }
 	    
 	    @GetMapping("/{id}")
