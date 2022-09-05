@@ -3,6 +3,7 @@ package com.residence.location.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import lombok.Data;
@@ -13,21 +14,22 @@ import lombok.NonNull;
 @NoArgsConstructor
 public class Client {
 	
-	    @Id @GeneratedValue
+	    @Id
+	    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	    private Integer id;
 	    private @NonNull String name;
 	    private String cin;
 	    private String notation;
 	    private String adresse;
-	   // @Enumerated(EnumType.STRING)
-	    //private TypeClient typeClient;
+		@Column(name = "typeclient")
+	    private String typeclient;
 	    private String comment;
-	    private Boolean clientsaisonnaire;
-	   @Column(name = "clientpermanent")
-	    private Boolean clientpermanent;
+	    private String clientcontrattype;
 	    private String email;
 	    private String tel1;
 	    private String tel2;
+	    private String profil;
+	    
 		public Integer getId() {
 			return id;
 		}
@@ -64,18 +66,14 @@ public class Client {
 		public void setComment(String comment) {
 			this.comment = comment;
 		}
-		public Boolean getClientsaisonnaire() {
-			return clientsaisonnaire;
+	
+		public String getClientcontrattype() {
+			return clientcontrattype;
 		}
-		public void setClientsaisonnaire(Boolean clientsaisonnaire) {
-			this.clientsaisonnaire = clientsaisonnaire;
+		public void setClientcontrattype(String clientcontrattype) {
+			this.clientcontrattype = clientcontrattype;
 		}
-		public Boolean getClientpermanent() {
-			return clientpermanent;
-		}
-		public void setClientpermanent(Boolean clientpermanent) {
-			this.clientpermanent = clientpermanent;
-		}
+
 		public String getEmail() {
 			return email;
 		}
@@ -94,5 +92,18 @@ public class Client {
 		public void setTel2(String tel2) {
 			this.tel2 = tel2;
 		}
+		public String getTypeclient() {
+			return typeclient;
+		}
+		public void setTypeclient(String typeclient) {
+			this.typeclient = typeclient;
+		}
+		public String getProfil() {
+			return profil;
+		}
+		public void setProfil(String profil) {
+			this.profil = profil;
+		}
+
 	    
 }

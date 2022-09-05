@@ -4,6 +4,7 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
@@ -13,7 +14,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class Reservation {
-	  @Id @GeneratedValue
+	  @Id  @GeneratedValue(strategy = GenerationType.IDENTITY)
 	    private Long id;
 	    private Date dateDebut;
 	    private Date dateFin;
@@ -107,6 +108,12 @@ public class Reservation {
 		}
 		public void setFeedbackProprio(String feedbackProprio) {
 			this.feedbackProprio = feedbackProprio;
+		}
+		public Long getNombreNuitGratuit() {
+			return nombreNuitGratuit;
+		}
+		public void setNombreNuitGratuit(Long nombreNuitGratuit) {
+			this.nombreNuitGratuit = nombreNuitGratuit;
 		}
 	    
 }
