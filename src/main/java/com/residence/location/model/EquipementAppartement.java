@@ -14,20 +14,21 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class EquipementAppartement {
+	
     @Id  @GeneratedValue(strategy = GenerationType.IDENTITY)
-
-	private Long id;
+	private Integer id;
 	private String type;
 	private String description;
-	private Date dateAchat;
-	private Long nombreDePiece;
-	private Long prixAchat;
+	private Date dateachat;
+	private Integer nombredepiece;
+	private Integer prixachat;
 	private String reference;
-	private Long appartement;
-	public Long getId() {
+	private Integer appartement;
+
+	public Integer getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getType() {
@@ -42,23 +43,24 @@ public class EquipementAppartement {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public Date getDateAchat() {
-		return dateAchat;
+	
+	public Integer getNombredepiece() {
+		return nombredepiece;
 	}
-	public void setDateAchat(Date dateAchat) {
-		this.dateAchat = dateAchat;
+	public void setNombredepiece(Integer nombredepiece) {
+		this.nombredepiece = nombredepiece;
 	}
-	public Long getNombreDePiece() {
-		return nombreDePiece;
+	public Integer getPrixachat() {
+		return prixachat;
 	}
-	public void setNombreDePiece(Long nombreDePiece) {
-		this.nombreDePiece = nombreDePiece;
+	public void setPrixachat(Integer prixachat) {
+		this.prixachat = prixachat;
 	}
-	public Long getPrixAchat() {
-		return prixAchat;
+	public Date getDateachat() {
+		return dateachat;
 	}
-	public void setPrixAchat(Long prixAchat) {
-		this.prixAchat = prixAchat;
+	public void setDateachat(Date dateachat) {
+		this.dateachat = dateachat;
 	}
 	public String getReference() {
 		return reference;
@@ -66,11 +68,13 @@ public class EquipementAppartement {
 	public void setReference(String reference) {
 		this.reference = reference;
 	}
-	public Long getAppartement() {
+
+	public Integer getAppartement() {
 		return appartement;
 	}
-	public void setAppartement(Long appartement) {
+	public void setAppartement(Integer appartement) {
 		this.appartement = appartement;
 	}
+
 	
 }

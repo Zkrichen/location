@@ -14,18 +14,12 @@ public class Appartement {
 	
 	    @Id 
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)
-	    private Long id;
+	    private Integer id;
 	    private @NonNull String name;
 	    private Integer superficie;
 	    private String batiment;
 	    private String adresse;
-	    private String equipement;
-		public Long getId() {
-			return id;
-		}
-		public void setId(Long id) {
-			this.id = id;
-		}
+		
 		public String getName() {
 			return name;
 		}
@@ -50,12 +44,14 @@ public class Appartement {
 		public void setAdresse(String adresse) {
 			this.adresse = adresse;
 		}
-		public String getEquipement() {
-			return equipement;
+		
+		public Integer getId() {
+			return id;
 		}
-		public void setEquipement(String equipement) {
-			this.equipement = equipement;
+		public void setId(Integer id) {
+			this.id = id;
 		}
+
 	    
 
 
