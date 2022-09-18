@@ -1,0 +1,42 @@
+package com.residence.location.rest;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.residence.location.model.Reservation;
+import com.residence.location.service.ReservationService;
+
+@RestController
+@RequestMapping("/reservations")
+@CrossOrigin(origins = "http://localhost:4200/")
+public class ReservationController {
+	@Autowired
+	public ReservationService resService;
+	@GetMapping("/")
+	public List<Reservation> getAll (@RequestParam String field) {
+		return resService.findAll(Sort.by(Direction.ASC, field));
+	}
+	
+    @PostMapping("/")
+    public ResponseEntity<Reservation> createReservation(@RequestBody Reservation res) {
+      try {
+    	  Reservation _app = resService.createOrEditRes(res);
+        return new ResponseEntity<>(_app, HttpStatus.CREATED);
+      } catch (Exception e) {
+        return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+      }
+    }
+
+}

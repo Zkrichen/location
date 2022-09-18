@@ -2,10 +2,12 @@ package com.residence.location.model;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 import lombok.Data;
@@ -15,46 +17,64 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Reservation {
 	  @Id  @GeneratedValue(strategy = GenerationType.IDENTITY)
-	    private Long id;
-	    private Date dateDebut;
-	    private Date dateFin;
-	    private BigDecimal prix;
+	    private Integer id;
+	    private Date datedebut;
+	    private Date datefin;
+	    private BigDecimal prixloyer;
 	    private Boolean paye;
 	    private String reduction;
-	    private Long nombreDeNuite;
-	    private BigDecimal prixParNuite;
-	    @OneToOne
+	    private Integer nombredenuite;
+	    private BigDecimal prixparnuite;
+	    @OneToOne( cascade = CascadeType.REFRESH ) 
+	    @JoinColumn( name="appratement" )
 	    private Appartement appratement;
-	    @OneToOne
+	    @OneToOne( cascade = CascadeType.REFRESH ) 
+	    @JoinColumn( name="client" )
 	    private Client client;
-	    private BigDecimal avance;
-	    private String feedbackClient;
-	    private String feedbackProprio;
-	    private Long nombreNuitGratuit;
-		public Long getId() {
+	    private Integer avance;
+	    private String feedbackclient;
+	    private String feedbackproprio;
+	    private Integer nombrenuitgratuit;
+	    private String typelocation;
+	    private Integer nombredemois;
+	    
+		public Integer getNombredemois() {
+			return nombredemois;
+		}
+		public void setNombredemois(Integer nombredemois) {
+			this.nombredemois = nombredemois;
+		}
+		public BigDecimal getPrixloyer() {
+			return prixloyer;
+		}
+		public void setPrixloyer(BigDecimal prixloyer) {
+			this.prixloyer = prixloyer;
+		}
+		public String getTypelocation() {
+			return typelocation;
+		}
+		public void setTypelocation(String typelocation) {
+			this.typelocation = typelocation;
+		}
+		public Integer getId() {
 			return id;
 		}
-		public void setId(Long id) {
+		public void setId(Integer id) {
 			this.id = id;
 		}
-		public Date getDateDebut() {
-			return dateDebut;
+		public Date getDatedebut() {
+			return datedebut;
 		}
-		public void setDateDebut(Date dateDebut) {
-			this.dateDebut = dateDebut;
+		public void setDatedebut(Date datedebut) {
+			this.datedebut = datedebut;
 		}
-		public Date getDateFin() {
-			return dateFin;
+		public Date getDatefin() {
+			return datefin;
 		}
-		public void setDateFin(Date dateFin) {
-			this.dateFin = dateFin;
+		public void setDatefin(Date datefin) {
+			this.datefin = datefin;
 		}
-		public BigDecimal getPrix() {
-			return prix;
-		}
-		public void setPrix(BigDecimal prix) {
-			this.prix = prix;
-		}
+
 		public Boolean getPaye() {
 			return paye;
 		}
@@ -67,17 +87,17 @@ public class Reservation {
 		public void setReduction(String reduction) {
 			this.reduction = reduction;
 		}
-		public Long getNombreDeNuite() {
-			return nombreDeNuite;
+		public Integer getNombredenuite() {
+			return nombredenuite;
 		}
-		public void setNombreDeNuite(Long nombreDeNuite) {
-			this.nombreDeNuite = nombreDeNuite;
+		public void setNombredenuite(Integer nombredenuite) {
+			this.nombredenuite = nombredenuite;
 		}
-		public BigDecimal getPrixParNuite() {
-			return prixParNuite;
+		public BigDecimal getPrixparnuite() {
+			return prixparnuite;
 		}
-		public void setPrixParNuite(BigDecimal prixParNuite) {
-			this.prixParNuite = prixParNuite;
+		public void setPrixparnuite(BigDecimal prixparnuite) {
+			this.prixparnuite = prixparnuite;
 		}
 		public Appartement getAppratement() {
 			return appratement;
@@ -91,29 +111,29 @@ public class Reservation {
 		public void setClient(Client client) {
 			this.client = client;
 		}
-		public BigDecimal getAvance() {
+		public Integer getAvance() {
 			return avance;
 		}
-		public void setAvance(BigDecimal avance) {
+		public void setAvance(Integer avance) {
 			this.avance = avance;
 		}
-		public String getFeedbackClient() {
-			return feedbackClient;
+		public String getFeedbackclient() {
+			return feedbackclient;
 		}
-		public void setFeedbackClient(String feedbackClient) {
-			this.feedbackClient = feedbackClient;
+		public void setFeedbackclient(String feedbackclient) {
+			this.feedbackclient = feedbackclient;
 		}
-		public String getFeedbackProprio() {
-			return feedbackProprio;
+		public String getFeedbackproprio() {
+			return feedbackproprio;
 		}
-		public void setFeedbackProprio(String feedbackProprio) {
-			this.feedbackProprio = feedbackProprio;
+		public void setFeedbackproprio(String feedbackproprio) {
+			this.feedbackproprio = feedbackproprio;
 		}
-		public Long getNombreNuitGratuit() {
-			return nombreNuitGratuit;
+		public Integer getNombrenuitgratuit() {
+			return nombrenuitgratuit;
 		}
-		public void setNombreNuitGratuit(Long nombreNuitGratuit) {
-			this.nombreNuitGratuit = nombreNuitGratuit;
+		public void setNombrenuitgratuit(Integer nombrenuitgratuit) {
+			this.nombrenuitgratuit = nombrenuitgratuit;
 		}
-	    
+		
 }
