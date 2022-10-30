@@ -10,7 +10,7 @@ import com.residence.location.model.Reservation;
 public interface ReservationService {
  public List<Reservation> getAll();
  public Reservation createOrEditRes(Reservation res);
- public Optional<Reservation> getClient(Integer id);
+ public Optional<Reservation> getRes(Integer id);
  void delete(Reservation reservation);
 public List<Reservation> findAll(Sort by);
  

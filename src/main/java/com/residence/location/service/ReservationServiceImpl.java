@@ -29,9 +29,8 @@ public class ReservationServiceImpl implements ReservationService{
 	}
 
 	@Override
-	public Optional<Reservation> getClient(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+	public Optional<Reservation> getRes(Integer id) {
+		return resRepo.findById(id);
 	}
 
 	@Override
