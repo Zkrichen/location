@@ -13,6 +13,8 @@ public interface ReservationService {
  public Optional<Reservation> getRes(Integer id);
  void delete(Reservation reservation);
 public List<Reservation> findAll(Sort by);
+public List<Reservation> getCheckOUT();
+public List<Reservation> getCheckIN();
  
 
 }

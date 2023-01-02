@@ -6,4 +6,5 @@ import com.residence.location.model.Appartement;
 
 public interface AppartementRepository extends JpaRepository<Appartement, Integer> {
 
+	
 }

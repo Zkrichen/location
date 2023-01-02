@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,7 +20,9 @@ import lombok.NoArgsConstructor;
 public class Reservation {
 	  @Id  @GeneratedValue(strategy = GenerationType.IDENTITY)
 	    private Integer id;
+	    @Temporal(TemporalType.DATE)
 	    private Date datedebut;
+	    @Temporal(TemporalType.DATE)
 	    private Date datefin;
 	    private BigDecimal prixloyer;
 	    private Boolean paye;
