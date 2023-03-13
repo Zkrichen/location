@@ -19,7 +19,12 @@ public class Appartement {
 	    private Integer superficie;
 	    private String batiment;
 	    private String adresse;
+	    private Integer etage;
+	    private String description;
+	    private Integer nombredechambre;
+	    private String type;
 		
+	    
 		public String getName() {
 			return name;
 		}
