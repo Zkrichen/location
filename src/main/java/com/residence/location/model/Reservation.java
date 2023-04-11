@@ -41,6 +41,11 @@ public class Reservation {
 	    private Integer nombrenuitgratuit;
 	    private String typelocation;
 	    private Integer nombredemois;
+	    private String oknok;
+	    private Integer nombrepersonnereel;
+	    private Boolean casse;
+	    private Boolean bruit;
+	    
 	    
 		public Integer getNombredemois() {
 			return nombredemois;

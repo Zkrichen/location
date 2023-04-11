@@ -31,7 +31,7 @@ public class ReservationController {
 	public ReservationService resService;
     @GetMapping(value="/", produces = { MediaType.APPLICATION_JSON_VALUE})
 	public List<Reservation> getAll (@RequestParam String field) {
-		return resService.findAll(Sort.by(Direction.ASC, field));
+		return resService.findAll(Sort.by(Direction.DESC, field));
 	}
     
     @GetMapping(value="/checkIn", produces = { MediaType.APPLICATION_JSON_VALUE})
