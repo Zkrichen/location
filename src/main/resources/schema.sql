@@ -15,6 +15,11 @@ CREATE TABLE `reservation` (
   `typelocation` varchar(1024) DEFAULT NULL,
   `nombrenuitgratuit` int DEFAULT '0',
   `nombredemois` int DEFAULT NULL,
+   oknok VARCHAR(20),
+   `casse` tinyint DEFAULT NULL,
+   `bruit` tinyint DEFAULT NULL,
+   `nombrepersonnereel` int DEFAULT 1,
+
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
 );
@@ -28,6 +33,7 @@ CREATE TABLE `equipementappartement` (
   `prixachat` int DEFAULT NULL,
   `reference` varchar(45) DEFAULT NULL,
   `appartement` int DEFAULT NULL
+
 );
 
 CREATE TABLE `client` (
@@ -65,6 +71,12 @@ CREATE TABLE `appartement` (
   `compteurEau` varchar(128) DEFAULT NULL,
   `compteurElec` varchar(128) DEFAULT NULL,
   `adresse` varchar(128) DEFAULT NULL,
+  `etage` int DEFAULT NULL,
+  `description`varchar(1024) DEFAULT NULL,
+  `nombreDeChambre` int DEFAULT NULL,
+  `type` varchar(128) DEFAULT NULL,
+
+
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
 );
