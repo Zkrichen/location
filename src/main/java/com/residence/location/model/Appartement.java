@@ -56,6 +56,30 @@ public class Appartement {
 		public void setId(Integer id) {
 			this.id = id;
 		}
+		public Integer getEtage() {
+			return etage;
+		}
+		public void setEtage(Integer etage) {
+			this.etage = etage;
+		}
+		public String getDescription() {
+			return description;
+		}
+		public void setDescription(String description) {
+			this.description = description;
+		}
+		public Integer getNombredechambre() {
+			return nombredechambre;
+		}
+		public void setNombredechambre(Integer nombredechambre) {
+			this.nombredechambre = nombredechambre;
+		}
+		public String getType() {
+			return type;
+		}
+		public void setType(String type) {
+			this.type = type;
+		}
 
 	    
 

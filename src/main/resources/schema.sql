@@ -72,7 +72,7 @@ CREATE TABLE `appartement` (
   `compteurElec` varchar(128) DEFAULT NULL,
   `adresse` varchar(128) DEFAULT NULL,
   `etage` int DEFAULT NULL,
-  `description`varchar(1024) DEFAULT NULL,
+  `description` varchar(1024) DEFAULT NULL,
   `nombreDeChambre` int DEFAULT NULL,
   `type` varchar(128) DEFAULT NULL,
 

@@ -144,5 +144,29 @@ public class Reservation {
 		public void setNombrenuitgratuit(Integer nombrenuitgratuit) {
 			this.nombrenuitgratuit = nombrenuitgratuit;
 		}
+		public String getOknok() {
+			return oknok;
+		}
+		public void setOknok(String oknok) {
+			this.oknok = oknok;
+		}
+		public Integer getNombrepersonnereel() {
+			return nombrepersonnereel;
+		}
+		public void setNombrepersonnereel(Integer nombrepersonnereel) {
+			this.nombrepersonnereel = nombrepersonnereel;
+		}
+		public Boolean getCasse() {
+			return casse;
+		}
+		public void setCasse(Boolean casse) {
+			this.casse = casse;
+		}
+		public Boolean getBruit() {
+			return bruit;
+		}
+		public void setBruit(Boolean bruit) {
+			this.bruit = bruit;
+		}
 		
 }

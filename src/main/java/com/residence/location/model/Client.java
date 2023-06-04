@@ -29,6 +29,7 @@ public class Client {
 	    private String tel1;
 	    private String tel2;
 	    private String profil;
+
 	    
 		public Integer getId() {
 			return id;
