@@ -1,5 +1,6 @@
 package com.residence.location.rest;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -33,14 +34,14 @@ public class ReservationController {
 	}
     
     @GetMapping(value="/checkIn", produces = { MediaType.APPLICATION_JSON_VALUE})
-	public List<Reservation> getAllCheckIn() {
-		return resService.getCheckIN();
+	public List<Reservation> getAllCheckIn(@RequestParam String dateIn) {
+		return resService.getCheckIN(dateIn);
 	}
     
     
     @GetMapping(value="/checkOut", produces = { MediaType.APPLICATION_JSON_VALUE})
-	public List<Reservation> getCheckOut() {
-		return resService.getCheckOUT();
+	public List<Reservation> getCheckOut(@RequestParam String dateOut) {
+		return resService.getCheckOUT( dateOut);
 	}
 	
 	

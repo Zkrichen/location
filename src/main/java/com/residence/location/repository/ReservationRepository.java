@@ -18,4 +18,7 @@ public interface  ReservationRepository extends JpaRepository<Reservation, Integ
 	   
 	   @Query("select a from reservation a where a.datefin = :today")
 	    List<Reservation> findCheckOUT( @Param("today") Date creationDateTime);
+	   
+	   @Query("select a from reservation a where a.datedebut<: datedebut  or  a.datefin>: datefin and appratement=: appar")
+	    List<Reservation> findIfExestingRes( @Param("datedebut") Date datedebut, @Param("datefin") Date datefin, @Param("appar") Long appar );
 }

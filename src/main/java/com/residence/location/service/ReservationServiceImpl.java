@@ -29,6 +29,7 @@ public class ReservationServiceImpl implements ReservationService {
 
 	@Override
 	public Reservation createOrEditRes(Reservation res) {
+		
 		return resRepo.save(res);
 
 	}
@@ -50,13 +51,12 @@ public class ReservationServiceImpl implements ReservationService {
 	}
 
 	@Override
-	public List<Reservation> getCheckOUT() {
-		Date date = new Date();
-		SimpleDateFormat DateFor = new SimpleDateFormat("yyyy-MM-dd");
-		String stringDate= DateFor.format(date);
+	public List<Reservation> getCheckOUT(String dateOut) {
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 	    Date date1;
+
 		try {
-			date1 = new SimpleDateFormat("yyyy-MM-dd").parse(stringDate);
+			date1 = formatter.parse(dateOut);
 			return resRepo.findCheckOUT(date1);
 
 		} catch (ParseException e) {
@@ -67,20 +67,20 @@ public class ReservationServiceImpl implements ReservationService {
 	}
 
 	@Override
-	public List<Reservation> getCheckIN() {
-		
-		Date date = new Date();
-		SimpleDateFormat DateFor = new SimpleDateFormat("yyyy-MM-dd");
-		String stringDate= DateFor.format(date);
-	    Date date1;
+	public List<Reservation> getCheckIN(String dateIn) {
+
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+		Date date;
 		try {
-			date1 = new SimpleDateFormat("yyyy-MM-dd").parse(stringDate);
-			return resRepo.findCheckIN(date1);
+			date = formatter.parse(dateIn);
+			return resRepo.findCheckIN(date);  
 
 		} catch (ParseException e) {
 			e.printStackTrace();
-		}  
+		}
+
 		return null;
+
 	}
 
 }

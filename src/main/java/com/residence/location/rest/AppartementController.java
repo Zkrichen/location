@@ -56,7 +56,7 @@ public AppartementService appService;
 	    @PutMapping()
 	    public ResponseEntity<Appartement> updateAppartement(@RequestBody Appartement appartement) {
 
-	      if (appartement!=null) {
+ 	      if (appartement!=null) {
 	       
 	        return new ResponseEntity<>(appService.createOrEditAppartement(appartement), HttpStatus.OK);
 	      } else {
